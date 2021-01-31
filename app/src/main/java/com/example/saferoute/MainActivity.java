@@ -41,8 +41,9 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     SearchView searchView;
 
     /**
+     * Method that runs when the app first starts up
+     * @param savedInstanceState idk, the state in which the app saves ??!?
      *
-     * @param savedInstanceState
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +56,11 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             /**
+             * What happens when someone searches something
+             * Finds the address/location and marks it on the map
              *
-             * @param query
-             * @return
+             * @param query String that the user searched
+             * @return false, thats it
              */
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -68,7 +71,6 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                     Geocoder geocoder = new Geocoder(MainActivity.this);
                     try {
                         addressList = geocoder.getFromLocationName(location, MAX_RESULTS);
-
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -81,9 +83,9 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
             }
 
             /**
-             *
-             * @param newText
-             * @return
+             * idk what this does
+             * @param newText the text change ??!?!
+             * @return false, thats it
              */
             @Override
             public boolean onQueryTextChange(String newText) {
@@ -95,8 +97,8 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     /**
-     *
-     * @param googleMap
+     * Runs when the map first starts up, just centers it on dc
+     * @param googleMap Map object that started up
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
