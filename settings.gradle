@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "safe_route"
+rootProject.name = "SafeRoute"

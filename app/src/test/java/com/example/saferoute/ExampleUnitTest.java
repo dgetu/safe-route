@@ -1,4 +1,4 @@
-package com.example.safe_route;
+package com.example.saferoute;
 
 import org.junit.Test;
 

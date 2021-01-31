@@ -1,4 +1,4 @@
-package com.example.safe_route;
+package com.example.saferoute;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.safe_route", appContext.getPackageName());
+        assertEquals("com.example.saferoute", appContext.getPackageName());
     }
 }

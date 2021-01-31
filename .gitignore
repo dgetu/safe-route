@@ -40,3 +40,6 @@ gradle-app.assetWizardSettings
 .externalNativeBuild
 .cxx
 local.properties
+
+# api xml #
+google_maps_api.xml
