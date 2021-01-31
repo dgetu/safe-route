@@ -104,4 +104,4 @@ if __name__ == "__main__":
     usCapitol = (38.887163118, -77.005333312)
     pathGenerator = PathGenerator(whiteHouse, usCapitol, crimeDensity)
     path = np.array(pathGenerator.generatePath())
-    print(f"via:enc:{polyline.encode(path[1:-1])}")
+    print(f"via:enc:{polyline.encode(path)}:")
