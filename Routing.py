@@ -1,6 +1,6 @@
-import scipy
+import scipy.spatial
 import numpy as np
-import polyline
+import polyline, scipy
 
 
 class CrimeDensityParser:
