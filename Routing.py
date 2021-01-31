@@ -21,7 +21,7 @@ class PathGenerator:
     lengthWeight = 0
     crimeWeight = 2
     flatCost = 0
-    bins = 15
+    bins = 5
     max_waypoints = 20  # doesnt actually do anything right now
 
     def __init__(self, src, dest, crimeDensity):
@@ -46,7 +46,7 @@ class PathGenerator:
         ) + self.flatCost
 
     def directPathCost(self, src, dest):
-        samples = 20
+        samples = 5
         crime = np.max(
             [self.crimeDensity(coordinate) for coordinate in zip(self.lats, self.longs)]
         )
@@ -59,7 +59,7 @@ class PathGenerator:
         predecessors = scipy.sparse.csgraph.shortest_path(
             costMatrix, indices=0, return_predecessors=True
         )[1]
-        indices = [224]
+        indices = [self.bins**2 - 1]
         while indices[-1] != 0:
             indices.append(predecessors[indices[-1]])
         waypointIndices = [
