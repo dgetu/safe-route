@@ -4,3 +4,6 @@ entrypoint: gunicorn -b :$PORT main:app
 handlers:
 - url: /.*
   script: auto
+
+env_variables:
+  API_KEY: "YOUR_API_KEY"
