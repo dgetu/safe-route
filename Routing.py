@@ -1,5 +1,6 @@
 import scipy
 import numpy as np
+import polyline
 
 
 class CrimeDensityParser:
@@ -103,10 +104,4 @@ if __name__ == "__main__":
     usCapitol = (38.887163118, -77.005333312)
     pathGenerator = PathGenerator(whiteHouse, usCapitol, crimeDensity)
     path = np.array(pathGenerator.generatePath())
-    lats = np.linspace(whiteHouse[0], usCapitol[0], 100)
-    longs = np.linspace(whiteHouse[1], usCapitol[1], 100)
-    testData = np.array([[(lat, lon) for lon in longs] for lat in lats])
-    testData = np.apply_along_axis(crimeDensity, 2, testData)
-    # sns.heatmap(testData)
-    sns.scatterplot(path[:, 1], path[:, 0])
-    plt.show()
+    print(f"via:enc:{polyline.encode(path[1:-1])}")
