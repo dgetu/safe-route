@@ -1,2 +1,0 @@
--r common.txt
-black==20.8b1
